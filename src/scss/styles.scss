@@ -1,0 +1,10 @@
+// Variables overrides
+$primary: #C0c;
+$enable-shadows: true;
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+img.censored {
+  filter: blur(8px);
+}

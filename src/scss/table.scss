@@ -1,0 +1,24 @@
+table td {
+  min-height: 145px;
+  text-align: center;
+  vertical-align: middle;
+
+  img {
+    width: 65px;
+    height: 50px;
+    vertical-align: middle;
+    object-position: top;
+  }
+}
+
+table thead {
+  th {
+    text-align: center;
+  }
+}
+
+.nested-table {
+  th {
+    width: 25%;
+  }
+}
