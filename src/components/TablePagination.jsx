@@ -10,8 +10,6 @@ function TablePagination({
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(10)
-  // const [maxNumberOfPages, setMaxNumberOfPages] = useState(0)
-  // const [totalPages, setTotalPages] = useState(0)
   const numberOfNavLinks = 7
   const [totalNumberOfPages, setTotalNumberOfPages] = useState(
     Number.parseInt(totalLinks / recordsPerPage) + 1
