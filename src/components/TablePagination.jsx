@@ -14,6 +14,7 @@ function TablePagination({
     Number.parseInt(totalLinks / recordsPerPage) + 1
   )
   const [paginationLinks, setPaginationLinks] = useState(1)
+  const [paginationLinksNumber, setPaginationLinksNumber] = useState(1)
   const [maxNumberOfPaginationLinks, setMaxNumberOfPaginationLinks] =
     useState(7)
 
