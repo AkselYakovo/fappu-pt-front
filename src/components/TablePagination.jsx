@@ -19,11 +19,12 @@ function TablePagination({
     useState(7)
 
   useEffect(() => {
-    const numberOfPages = Number.parseInt(totalLinks / recordsPerPage)
-    const hasRemainer = totalLinks % recordsPerPage ? true : false
-    setTotalNumberOfPages(hasRemainer ? numberOfPages + 1 : numberOfPages)
-    // console.log('max number of pages:', numberOfPages)
-  }, [totalLinks, recordsPerPage])
+    if (totalLinks < maxNumberOfPaginationLinks * recordsPerPage) {
+      setPaginationLinksNumber(Number.parseInt(totalLinks / recordsPerPage) + 1)
+    } else {
+      setPaginationLinksNumber(maxNumberOfPaginationLinks)
+    }
+  }, [maxNumberOfPaginationLinks, recordsPerPage, totalLinks])
 
   const clickHandler = (logicalNavPage, page) => {
     const URL =
