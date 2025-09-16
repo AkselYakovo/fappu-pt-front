@@ -33,12 +33,19 @@ function TablePagination({
 
     setIsLoading(true)
 
-    if (logicalNavPage === numberOfNavLinks - 1 && page < totalNumberOfPages) {
-      setInitialNumberOfNavigationLinks(page - (numberOfNavLinks - 2))
-      setCurrentPage(page)
-    } else if (logicalNavPage === 0 && page !== 1) {
-      setInitialNumberOfNavigationLinks(page - 1)
-      setCurrentPage(page)
+    if (paginationLinksNumber === maxNumberOfPaginationLinks) {
+      if (
+        logicalNavPage === paginationLinksNumber - 1 &&
+        page < totalNumberOfPages
+      ) {
+        setPaginationLinks(page - (paginationLinksNumber - 2))
+        setCurrentPage(page)
+      } else if (logicalNavPage === 0 && page !== 1) {
+        setPaginationLinks(page - 1)
+        setCurrentPage(page)
+      } else {
+        setCurrentPage(page)
+      }
     } else {
       setCurrentPage(page)
     }
