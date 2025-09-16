@@ -57,6 +57,22 @@ function TablePagination({
       .finally(() => setIsLoading(false))
   }
 
+  const goToFirst = () => {
+    const URL =
+      import.meta.env.VITE_BACKEND_ADDRESS +
+      `/website/${website.toLowerCase()}/records/0}`
+
+    setIsLoading(true)
+    setCurrentPage(1)
+    setPaginationLinks(1)
+
+    fetch(URL)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => updateInitialTen(data.links))
+      .catch((err) => setIsLoading(false))
+      .finally(() => setIsLoading(false))
+  }
+
   if (isLoading) {
     return (
       <ul className="pagination mb-0 justify-content-center">
