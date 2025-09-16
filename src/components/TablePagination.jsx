@@ -73,6 +73,26 @@ function TablePagination({
       .finally(() => setIsLoading(false))
   }
 
+  const goToLast = () => {
+    const URL =
+      import.meta.env.VITE_BACKEND_ADDRESS +
+      `/website/${website.toLowerCase()}/records/${totalNumberOfPages - 1}}`
+    setIsLoading(true)
+    setCurrentPage(totalNumberOfPages)
+
+    if (paginationLinksNumber === maxNumberOfPaginationLinks) {
+      setPaginationLinks(totalNumberOfPages - (paginationLinksNumber - 1))
+    } else {
+      setPaginationLinks(1)
+    }
+
+    fetch(URL)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => updateInitialTen(data.links))
+      .catch((err) => setIsLoading(false))
+      .finally(() => setIsLoading(false))
+  }
+
   if (isLoading) {
     return (
       <ul className="pagination mb-0 justify-content-center">
