@@ -101,10 +101,10 @@ function TablePagination({
             First
           </a>
         </li>
-        {Array.from({ length: numberOfNavLinks }).map((item, i) => (
+        {Array.from({ length: paginationLinksNumber }).map((item, i) => (
           <li className="page-item disabled" key={i}>
             <a href="#" className="page-link">
-              {initialNumberOfNavigationLinks + i}
+              {paginationLinks + i}
             </a>
           </li>
         ))}
@@ -124,10 +124,10 @@ function TablePagination({
           First
         </a>
       </li>
-      {Array.from({ length: numberOfNavLinks }).map((item, i) => (
+      {Array.from({ length: paginationLinksNumber }).map((item, i) => (
         <li
           className={
-            currentPage === i + initialNumberOfNavigationLinks
+            currentPage === i + paginationLinks
               ? 'page-item active'
               : 'page-item'
           }
@@ -136,9 +136,9 @@ function TablePagination({
           <a
             href="#"
             className="page-link"
-            onClick={() => clickHandler(i, initialNumberOfNavigationLinks + i)}
+            onClick={() => clickHandler(i, paginationLinks + i)}
           >
-            {initialNumberOfNavigationLinks + i}
+            {paginationLinks + i}
           </a>
         </li>
       ))}
