@@ -119,8 +119,8 @@ function TablePagination({
 
   return (
     <ul className="pagination mb-0 justify-content-center">
-        <a href="#" className="page-link">
       <li className={currentPage === 1 ? 'page-item disabled' : 'page-item'}>
+        <a href="#" className="page-link" onClick={() => goToFirst()}>
           First
         </a>
       </li>
@@ -142,7 +142,6 @@ function TablePagination({
           </a>
         </li>
       ))}
-        <a href="#" className="page-link">
       <li
         className={
           currentPage === totalNumberOfPages
@@ -150,6 +149,7 @@ function TablePagination({
             : 'page-item'
         }
       >
+        <a href="#" className="page-link" onClick={() => goToLast()}>
           Last
         </a>
       </li>
