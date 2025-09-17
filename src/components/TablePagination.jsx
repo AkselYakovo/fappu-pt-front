@@ -119,8 +119,8 @@ function TablePagination({
 
   return (
     <ul className="pagination mb-0 justify-content-center">
-      <li className="page-item">
         <a href="#" className="page-link">
+      <li className={currentPage === 1 ? 'page-item disabled' : 'page-item'}>
           First
         </a>
       </li>
@@ -142,8 +142,14 @@ function TablePagination({
           </a>
         </li>
       ))}
-      <li className="page-item">
         <a href="#" className="page-link">
+      <li
+        className={
+          currentPage === totalNumberOfPages
+            ? 'page-item disabled'
+            : 'page-item'
+        }
+      >
           Last
         </a>
       </li>
