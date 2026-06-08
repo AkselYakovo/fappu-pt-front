@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import ContentSkeleton from './ContentSkeleton'
 import WebsiteCard from './WebsiteCard'
 
-
 function Content() {
   const [websites, setWebsites] = useState(localStorage.getItem('$$_WEBSITES'))
   const [isLoading, setIsLoading] = useState(false)
@@ -15,7 +14,7 @@ function Content() {
     fetch(URL)
       .then((res) => (res.ok ? res.json() : new Error()))
       .then((data) => {
-        setWebsites(JSON.parse(data).websites)
+        setWebsites(data.websites)
         localStorage.setItem('$$_WEBSITES')
       })
       .catch(() => setIsLoading(false))
