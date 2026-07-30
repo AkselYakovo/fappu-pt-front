@@ -2,13 +2,13 @@ function SingleRecordTableRow({ recordData, index }) {
   const emptyArray = Array.from({ length: 4 }, () => 0)
 
   const filledArray = emptyArray.map((value, i) => {
-    if (recordData.scrapped_entries[i]) return recordData.scrapped_entries[i]
+    if (recordData.scraped_entries[i]) return recordData.scraped_entries[i]
     else return value
   })
   return (
     <tr>
       <td>{index}</td>
-      <td>{recordData.scrapped_on}</td>
+      <td>{recordData.scraped_on}</td>
       <td>
         <table className="table table-sm nested-table mb-0">
           <tr>

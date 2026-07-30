@@ -99,9 +99,11 @@ function SingleRecord() {
           <p className="text-center fw-bold mb-1">First Appeneded on:</p>
           <p className="text-center">{recordData.created_on}</p>
           <p className="text-center fw-bold mb-1">Total Scrapped Sets:</p>
-          <p className="text-center">{recordData.scrap_index.length}</p>
+          <p className="text-center">{recordData.scrape_index.length}</p>
           <p className="text-center fw-bold mb-1">Latest Scrapped Date:</p>
-          <p className="text-center">{recordData.scrap_index[0].scrapped_on}</p>
+          <p className="text-center">
+            {recordData.scrape_index[0].scraped_on}
+          </p>
           <p className="text-center">
             <a
               href={recordData.link}
@@ -119,7 +121,7 @@ function SingleRecord() {
         </div>
       </div>
       <div className="card-footer p-0">
-        <SingleRecordTable scrappedRecords={recordData.scrap_index} />
+        <SingleRecordTable scrappedRecords={recordData.scrape_index} />
       </div>
     </div>
   )
