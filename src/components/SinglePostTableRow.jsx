@@ -20,7 +20,7 @@ function SinglePostTableRow({ data }) {
           Link
         </a>
       </td>
-      <td>{data.scrap_index[0].scrapped_on}</td>
+      <td>{data.scrape_index[0].scraped_on}</td>
       <td>
         {nsfwVisibility ? (
           <img src={data.promo_image_src} />
@@ -28,7 +28,7 @@ function SinglePostTableRow({ data }) {
           <img src={data.promo_image_src} className="censored" />
         )}
       </td>
-      <td>{data.scrap_index.length}</td>
+      <td>{data.scrape_index.length}</td>
       <td>
         <a
           href={`/website/${website}/record/${data.index}`}
