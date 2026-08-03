@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import SingleRecordTableRow from './SingleRecordTableRow'
 
-function SingleRecordTable({ scrappedRecords }) {
+function SingleRecordTable({ scrapedRecords }) {
   const [isLoading, setIsLoading] = useState(false)
 
   return (
@@ -9,12 +9,12 @@ function SingleRecordTable({ scrappedRecords }) {
       <thead>
         <tr>
           <th>Index:</th>
-          <th>Scrapped On:</th>
-          <th>Scrapped Set:</th>
+          <th>Scraped On:</th>
+          <th>Scraped Set:</th>
         </tr>
       </thead>
       <tbody>
-        {scrappedRecords.map((recordData, i) => (
+        {scrapedRecords.map((recordData, i) => (
           <SingleRecordTableRow recordData={recordData} index={i} />
         ))}
       </tbody>

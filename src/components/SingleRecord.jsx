@@ -96,11 +96,11 @@ function SingleRecord() {
         <div className="flex-fill">
           <p className="text-center fw-bold mb-1">Record Number:</p>
           <p className="text-center">{recordData.index}</p>
-          <p className="text-center fw-bold mb-1">First Appeneded on:</p>
+          <p className="text-center fw-bold mb-1">First Appended on:</p>
           <p className="text-center">{recordData.created_on}</p>
-          <p className="text-center fw-bold mb-1">Total Scrapped Sets:</p>
+          <p className="text-center fw-bold mb-1">Total Scraped Sets:</p>
           <p className="text-center">{recordData.scrape_index.length}</p>
-          <p className="text-center fw-bold mb-1">Latest Scrapped Date:</p>
+          <p className="text-center fw-bold mb-1">Latest Scraped Date:</p>
           <p className="text-center">
             {recordData.scrape_index[0].scraped_on}
           </p>
@@ -114,14 +114,14 @@ function SingleRecord() {
               <i className="bi bi-box-arrow-up-right"></i>
             </a>
             <button className="btn btn-light">
-              <b>Scrap&nbsp;</b>
+              <b>Scrape&nbsp;</b>
               <i className="bi bi-plus-circle-fill"></i>
             </button>
           </p>
         </div>
       </div>
       <div className="card-footer p-0">
-        <SingleRecordTable scrappedRecords={recordData.scrape_index} />
+        <SingleRecordTable scrapedRecords={recordData.scrape_index} />
       </div>
     </div>
   )
