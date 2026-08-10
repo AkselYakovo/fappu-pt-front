@@ -152,7 +152,13 @@ function SinglePostTable({ website }) {
 export default SinglePostTable
 
 SinglePostTable.propTypes = {
-  website: PropTypes.objectOf({
-    title: PropTypes.string.isRequired
+  website: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    logo_url: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    total_links: PropTypes.number.isRequired,
+    lowest_annual_price: PropTypes.string,
+    lowest_montly_price: PropTypes.string
   })
 }

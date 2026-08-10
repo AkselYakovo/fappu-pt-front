@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function TablePaginationSkeleton({ totalLinks }) {
   return (
     <ul className="pagination mb-0 justify-content-center">
@@ -11,3 +13,7 @@ function TablePaginationSkeleton({ totalLinks }) {
 }
 
 export default TablePaginationSkeleton
+
+TablePaginationSkeleton.propTypes = {
+  totalLinks: PropTypes.number.isRequired
+}

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import UserContext from '../contexts/user'
 import { useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function SinglePostTableRow({ data }) {
   const user = useContext(UserContext)
@@ -43,3 +44,13 @@ function SinglePostTableRow({ data }) {
 }
 
 export default SinglePostTableRow
+
+SinglePostTableRow.propTypes = {
+  data: PropTypes.shape({
+    index: PropTypes.number.isRequired,
+    created_on: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    scrape_index: PropTypes.array.isRequired,
+    promo_image_src: PropTypes.string.isRequired
+  })
+}

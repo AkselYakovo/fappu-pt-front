@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 let closeButtonStyles = {
   top: '8px',
@@ -89,3 +90,8 @@ function SinglePostSkeleton({ isHalted, children }) {
 }
 
 export default SinglePostSkeleton
+
+SinglePostSkeleton.propTypes = {
+  isHalted: PropTypes.bool.isRequired,
+  children: PropTypes.object.isRequired,
+}
