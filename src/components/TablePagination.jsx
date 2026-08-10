@@ -161,5 +161,7 @@ export default TablePagination
 
 TablePagination.propTypes = {
   website: PropTypes.string.isRequired,
-  totalLinks: PropTypes.number.isRequired
+  totalLinks: PropTypes.number.isRequired,
+  initialTen: PropTypes.array,
+  updateInitialTen: PropTypes.func.isRequired
 }

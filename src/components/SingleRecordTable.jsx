@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import SingleRecordTableRow from './SingleRecordTableRow'
+import PropTypes from 'prop-types'
+import { recordShape } from '../types/record'
 
 function SingleRecordTable({ scrapedRecords }) {
   const [isLoading, setIsLoading] = useState(false)
@@ -15,7 +17,7 @@ function SingleRecordTable({ scrapedRecords }) {
       </thead>
       <tbody>
         {scrapedRecords.map((recordData, i) => (
-          <SingleRecordTableRow recordData={recordData} index={i} />
+          <SingleRecordTableRow key={i} recordData={recordData} index={i} />
         ))}
       </tbody>
     </table>
@@ -23,3 +25,7 @@ function SingleRecordTable({ scrapedRecords }) {
 }
 
 export default SingleRecordTable
+
+SingleRecordTable.propTypes = {
+  scrapedRecords: PropTypes.arrayOf(PropTypes.shape(recordShape))
+}

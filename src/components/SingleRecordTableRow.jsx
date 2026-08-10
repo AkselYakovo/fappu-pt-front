@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-key */
+import PropTypes from 'prop-types'
+import { recordShape } from '../types/record'
+
 function SingleRecordTableRow({ recordData, index }) {
   const emptyArray = Array.from({ length: 4 }, () => 0)
 
@@ -51,3 +55,8 @@ function SingleRecordTableRow({ recordData, index }) {
 }
 
 export default SingleRecordTableRow
+
+SingleRecordTableRow.propTypes = {
+  recordData: PropTypes.shape(recordShape),
+  index: PropTypes.number.isRequired
+}
