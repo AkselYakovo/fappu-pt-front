@@ -9,7 +9,7 @@ let placeholderStyles = {
   minHeight: '225px'
 }
 
-function SingleRecordSkeleton({ isHalted, children }) {
+function SingleRecordSkeleton() {
   const { id: website, index: recordID } = useParams()
   const navigate = useNavigate()
   const goBack = () => {
@@ -32,46 +32,42 @@ function SingleRecordSkeleton({ isHalted, children }) {
         </h2>
       </div>
       <div className="card-body placeholder-glow">
-        {children ? (
-          children
-        ) : (
-          <div className="d-flex">
-            <figure
-              className="col-md-3 p-0 placeholder ms-3"
-              style={placeholderStyles}
-            ></figure>
-            <div className="col-md-8">
-              <p className="text-center">
-                <span className="placeholder col-md-3"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-2"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-4"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-2"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-4"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-1"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-4"></span>
-              </p>
-              <p className="text-center">
-                <span className="placeholder col-md-3"></span>
-              </p>
-              <p className="text-center">
-                <button className="btn placeholder btn-primary disabled col-md-3"></button>
-                <button className="btn placeholder btn-light disabled col-md-2"></button>
-              </p>
-            </div>
+        <div className="d-flex">
+          <figure
+            className="col-md-3 p-0 placeholder ms-3"
+            style={placeholderStyles}
+          ></figure>
+          <div className="col-md-8">
+            <p className="text-center">
+              <span className="placeholder col-md-3"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-2"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-4"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-2"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-4"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-1"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-4"></span>
+            </p>
+            <p className="text-center">
+              <span className="placeholder col-md-3"></span>
+            </p>
+            <p className="text-center">
+              <button className="btn placeholder btn-primary disabled col-md-3"></button>
+              <button className="btn placeholder btn-light disabled col-md-2"></button>
+            </p>
           </div>
-        )}
+        </div>
       </div>
     </article>
   )
