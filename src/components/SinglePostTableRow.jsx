@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import UserContext from '../contexts/user'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 function SinglePostTableRow({ data }) {
@@ -31,13 +31,13 @@ function SinglePostTableRow({ data }) {
       </td>
       <td>{data.scrape_index.length}</td>
       <td>
-        <a
-          href={`/website/${website}/record/${data.index}`}
+        <Link
+          to={`/website/${website}/record/${data.index}`}
           className="btn btn-sm btn-dark"
         >
           View More&nbsp;
           <i className="bi bi-eye"></i>
-        </a>
+        </Link>
       </td>
     </tr>
   )
