@@ -8,3 +8,7 @@ $enable-shadows: true;
 img.censored {
   filter: blur(8px);
 }
+
+header a:hover {
+  text-decoration: none;
+}
