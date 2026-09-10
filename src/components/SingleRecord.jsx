@@ -21,6 +21,11 @@ function SingleRecord() {
     navigate('/')
   }
 
+  const openImageHandler = () => {
+    const img_url = recordData.promo_image_src
+    window.open(img_url, '_blank')
+  }
+
   useEffect(() => {
     const web = website.toLocaleLowerCase()
     const URL =
