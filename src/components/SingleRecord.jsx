@@ -95,7 +95,14 @@ function SingleRecord() {
             />
           )}
           <figcaption className="d-flex justify-content-center">
-            <button className="btn btn-info mt-3">Open Image</button>
+            <button
+              className="btn btn-info mt-3"
+              onClick={() => openImageHandler()}
+            >
+              <b>Open Image</b>
+              &nbsp;
+              <i className="bi bi-box-arrow-up-right"></i>
+            </button>
           </figcaption>
         </figure>
         <div className="flex-fill">
@@ -106,9 +113,7 @@ function SingleRecord() {
           <p className="text-center fw-bold mb-1">Total Scraped Sets:</p>
           <p className="text-center">{recordData.scrape_index.length}</p>
           <p className="text-center fw-bold mb-1">Latest Scraped Date:</p>
-          <p className="text-center">
-            {recordData.scrape_index[0].scraped_on}
-          </p>
+          <p className="text-center">{recordData.scrape_index[0].scraped_on}</p>
           <p className="text-center">
             <a
               href={recordData.link}
